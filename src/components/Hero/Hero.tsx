@@ -42,12 +42,7 @@ export default function Hero() {
           </button>
         </div>
       </div>
-      
-      <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-4 h-6 sm:w-6 sm:h-10 border-2 border-purple-400 rounded-full flex justify-center">
-          <div className="w-1 h-2 sm:h-3 bg-purple-400 rounded-full mt-1 sm:mt-2"></div>
-        </div>
-      </div>
+    
     </section>
   )
 }

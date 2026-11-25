@@ -1,8 +1,8 @@
-import { Cloud, Code2, Container, Cpu, Database, GitBranch, Network, Settings, Shield, Terminal, Users, Zap } from "lucide-react"
+import { Cloud, Code2, Container, Cpu, Database, GitBranch, Network, Settings, Shield, Terminal, Users, Zap, Braces } from "lucide-react"
 
 export function getExperienceYears() {
   const currentYear = new Date().getFullYear()
-  return currentYear - 2019
+  return currentYear - 2017
 }
 
 export const siteData = {
@@ -15,7 +15,7 @@ export const siteData = {
   hero: {
     title: "M ico",
     buttonValue: "Обсудить проект",
-    description: "Работаю с нуля или уже существующими проектами, снижаю облачный чек на 30-40% и проектирую архитектуру, которая держит 10K RPS. Работаю с AI, высоконагруженными сервисами и микросервисами.",
+    description: "Беру проекты с нуля и подключаюсь к существующим. Снижаю облачный чек на 30–40%, проектирую архитектуру под 10K RPS. Работаю с AI, высоконагруженными сервисами и микросервисами на Node.js и Go.",
     stats: [
       { number: '40+', label: 'сданных проектов' },
       { number: '9 из 10', label: 'клиентов возвращаются' },
@@ -33,7 +33,7 @@ export const siteData = {
     items: [
       {
         title: "Сокращаю расходы на инфраструктуру",
-        description: "В одном из проектов снизил ежемесячный чек AWS с 280 000 ₽ до 168 000 ₽ за счёт грамотного проектирования и перехода на serverless-архитектуру. Это не разовая оптимизация — закладываю экономию на этапе проектирования.",
+        description: "В одном из проектов снизил ежемесячный чек AWS с 280 000 ₽ до 168 000 ₽. Секрет простой — грамотное проектирование и переход на serverless-архитектуру. Это не разовая оптимизация, экономию я закладываю ещё на этапе проектирования.",
         metric: "ДО 40% ЭКОНОМИИ",
         gradient: "from-emerald-500 to-cyan-500",
         icon: Shield,
@@ -41,7 +41,7 @@ export const siteData = {
       },
       {
         title: "Ускоряю time-to-market",
-        description: "Для edtech-стартапа оптимизировал API: среднее время ответа упало с 340 мс до 87 мс, а конверсия в регистрацию выросла на 18%. Быстрый продукт — это не комфорт, это прямые деньги.",
+        description: "Для edtech-стартапа оптимизировал API, среднее время ответа упало с 340 мс до 87 мс. Конверсия в регистрацию выросла на 18%. Быстрый продукт — это не комфорт, это прямые деньги.",
         metric: "18% К КОНВЕРСИИ",
         gradient: "from-purple-500 to-pink-500",
         icon: Zap,
@@ -49,36 +49,36 @@ export const siteData = {
       },
       {
         title: "Интегрируюсь без потерь",
-        description: "Вливаюсь в проект за 1-2 дня. Уважаю текущий стек и процессы, улучшаю, а не диктую правила.",
-        metric: "1-2 ДНЯ НА СТАРТ",
+        description: "Вливаюсь в проект за 1–2 дня. Уважаю текущий стек и процессы, работаю и с Node.js, и с Go, не диктую правила, а улучшаю то, что уже есть.",
+        metric: "1–2 ДНЯ НА СТАРТ",
         gradient: "from-blue-500 to-indigo-500",
         icon: Users,
         features: ["Быстрое погружение", "Уважение к стеку"]
       }
     ],
     stats: [
-      { 
+      {
         number: "40+",
-        label: "Проектов под ключ с 2019 года",
+        label: "Проектов под ключ с 2017 года",
         suffix: "",
         gradient: "from-purple-500 to-pink-500",
         delay: "0s"
       },
-      { 
+      {
         number: getExperienceYears().toString(),
         label: `${getExperienceYears()} ${getExperienceYears() === 1 ? 'год' : getExperienceYears() < 5 ? 'года' : 'лет'} разработки`,
         suffix: "",
         gradient: "from-blue-500 to-cyan-500",
         delay: "0.1s"
       },
-      { 
+      {
         number: "100",
         label: "Соблюдённых дедлайнов",
         suffix: "%",
         gradient: "from-green-500 to-emerald-500",
         delay: "0.2s"
       },
-      { 
+      {
         number: "от 2000",
         label: "Стоимость часа моей экспертизы",
         suffix: " ₽",
@@ -94,17 +94,23 @@ export const siteData = {
     subtitle1: "Только боевые инструменты, которые прошли проверку реальными проектами",
     skillIcons: {
       "Node.js": Terminal,
+      "Go": Braces,
       "Микросервисы": Network,
       "API Design": GitBranch,
       "Архитектура": Settings,
+      "Архитектура систем": Settings,
       "React": Code2,
       "TypeScript": Zap,
       "Оптимизация": Settings,
       "UX/UI": Settings,
+      "Дизайн": Settings,
+      "Route map": GitBranch,
+      "Быстрая работа": Zap,
       "Docker": Container,
       "Kubernetes": Cloud,
       "AWS/GCP": Cloud,
       "CI/CD": GitBranch,
+      "MySQL": Database,
       "PostgreSQL": Database,
       "Redis": Cpu,
       "Брокеры сообщений": Network,
@@ -116,6 +122,7 @@ export const siteData = {
         level: "Эксперт",
         skills: [
           { name: "Node.js", level: 95 },
+          { name: "Go", level: 88 },
           { name: "Микросервисы", level: 90 },
           { name: "API Design", level: 92 },
           { name: "Архитектура систем", level: 88 }
@@ -125,10 +132,10 @@ export const siteData = {
         category: "Frontend",
         level: "Эксперт",
         skills: [
-          { name: "Route map", level: 90 },
-          { name: "Дизайн", level: 85 },
+          { name: "React", level: 90 },
+          { name: "TypeScript", level: 88 },
           { name: "UI/UX", level: 82 },
-          { name: "Быстрая работа", level: 90 },
+          { name: "Дизайн", level: 85 }
         ]
       },
       {
@@ -142,7 +149,7 @@ export const siteData = {
         ]
       },
       {
-        category: "Очереди",
+        category: "Базы данных",
         level: "Эксперт",
         skills: [
           { name: "MySQL", level: 90 },
@@ -174,7 +181,7 @@ export const siteData = {
     footerTitle3: "Прозрачно",
     footerSubTitle3: "от 2000 ₽ / час работы",
     footerTitle: "Готовы начать?",
-    footer: `© Mico Next ${new Date().getFullYear()}`,
+    footer: `© Mico ${new Date().getFullYear()}`,
     items: [
       {
         platform: "Telegram",
@@ -195,11 +202,10 @@ export const siteData = {
         description: "Пишите или звоните",
       },
       {
-        
         platform: "Email",
         platformName: "Почта",
-        label: "MicoNext@yandex.ru",
-        url: "mailto:MicoNext@yandex.ru",
+        label: "miconext@yandex.ru",
+        url: "mailto:miconext@yandex.ru",
         icon: "Email",
         description: "Для подробного ТЗ и документов",
         status: "Проверяю часто"
@@ -207,11 +213,29 @@ export const siteData = {
       {
         platform: "Phone",
         platformName: "Телефон",
-        label: "+7 (918) 716 69 17",
-        url: "tel:79184665096",
+        label: "+7 (918) 466 50 96",
+        url: "tel:+79184665096",
         icon: "Phone",
         description: "Проверка статуса и быстрые консультации",
         status: "Доступен"
+      },
+      {
+        platform: "Обо мне",
+        platformName: "MicoИнженер",
+        label: "MicoEngineer",
+        url: "https://okmic.github.io/MicoEngineer",
+        icon: "Mico",
+        status: "Онлайн",
+        description: "Рассказываю про себя",
+      },
+      {
+        platform: "Проекты",
+        platformName: "MicoПроекты",
+        label: "MicoProjects",
+        url: "https://okmic.github.io/MicoProjects",
+        icon: "Mico",
+        status: "Онлайн",
+        description: "С чем приходилось работать",
       },
     ]
   }

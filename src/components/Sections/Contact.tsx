@@ -1,14 +1,17 @@
 import { siteData } from '../../data'
-import { Mail, ArrowUpRight } from 'lucide-react'
+import { Mail, ArrowUpRight, Globe, FolderOpen } from 'lucide-react'
 import { FaTelegram, FaPhone } from 'react-icons/fa'
 import MaxIcon from '../Icons/MaxIcon'
+import { FcEngineering } from 'react-icons/fc'
+import { GoProjectSymlink } from 'react-icons/go'
 
-type AccentColor = 'blue' | 'emerald' | 'violet' | 'orange'
+type AccentColor = 'blue' | 'emerald' | 'violet' | 'orange' | 'cyan' | 'rose'
 
 interface ContactConfig {
-  icon: typeof FaTelegram | typeof MaxIcon | typeof Mail | typeof FaPhone
+  icon: typeof FaTelegram | typeof MaxIcon | typeof Mail | typeof FaPhone | typeof Globe | typeof FolderOpen
   gradient: string
   accent: AccentColor
+  platformKey: string
 }
 
 interface ContactCardProps {
@@ -36,21 +39,37 @@ const CONTACT_CARDS: ContactConfig[] = [
     icon: FaTelegram,
     gradient: 'from-blue-500 to-sky-400',
     accent: 'blue',
+    platformKey: 'Telegram',
   },
   {
     icon: MaxIcon,
     gradient: 'from-violet-500 to-purple-400',
     accent: 'violet',
+    platformKey: 'Max',
   },
   {
     icon: Mail,
-    gradient: 'from-orange-500 to-amber-400', 
+    gradient: 'from-orange-500 to-amber-400',
     accent: 'orange',
+    platformKey: 'Email',
   },
   {
     icon: FaPhone,
-    gradient: 'from-emerald-500 to-green-400', 
+    gradient: 'from-emerald-500 to-green-400',
     accent: 'emerald',
+    platformKey: 'Phone',
+  },
+  {
+    icon: FcEngineering,
+    gradient: 'from-cyan-500 to-teal-400',
+    accent: 'cyan',
+    platformKey: 'Обо мне',
+  },
+  {
+    icon: GoProjectSymlink,
+    gradient: 'from-rose-500 to-pink-400',
+    accent: 'rose',
+    platformKey: 'Проекты',
   },
 ]
 
@@ -88,6 +107,20 @@ const accentColors: Record<AccentColor, {
     dot: 'bg-orange-400',
     link: 'text-orange-400',
     border: 'border-orange-500/20 hover:border-orange-500/40',
+  },
+  cyan: {
+    badge: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
+    icon: 'bg-cyan-500/10 text-cyan-400',
+    dot: 'bg-cyan-400',
+    link: 'text-cyan-400',
+    border: 'border-cyan-500/20 hover:border-cyan-500/40',
+  },
+  rose: {
+    badge: 'bg-rose-500/10 text-rose-400 border-rose-500/20',
+    icon: 'bg-rose-500/10 text-rose-400',
+    dot: 'bg-rose-400',
+    link: 'text-rose-400',
+    border: 'border-rose-500/20 hover:border-rose-500/40',
   },
 }
 
@@ -150,6 +183,8 @@ function FeatureCard({ icon: Icon, title, description, accent }: FeatureCardProp
     emerald: 'text-emerald-400',
     violet: 'text-violet-400',
     orange: 'text-orange-400',
+    cyan: 'text-cyan-400',
+    rose: 'text-rose-400',
   }
 
   return (
@@ -168,11 +203,9 @@ function FeatureCard({ icon: Icon, title, description, accent }: FeatureCardProp
 export default function Contact() {
   const { contacts } = siteData
 
-  const items = CONTACT_CARDS.map((config, index) => ({
+  const items = CONTACT_CARDS.map((config) => ({
     ...config,
-    contact: contacts.items.find(item =>
-      item.platform === (index === 0 ? 'Telegram' : index === 1 ? 'Max' : index === 2 ? 'Email' : 'Phone')
-    ),
+    contact: contacts.items.find(item => item.platform === config.platformKey),
   }))
 
   return (
@@ -212,12 +245,12 @@ export default function Contact() {
           <FeatureCard
             icon={Mail}
             title={contacts.footerTitle1}
-            description={contacts.footerSubTitle2}
+            description={contacts.footerSubTitle1}
             accent="blue"
           />
           <FeatureCard
             icon={ArrowUpRight}
-            title={contacts.footerSubTitle1}
+            title={contacts.footerTitle2}
             description={contacts.footerSubTitle2}
             accent="emerald"
           />
